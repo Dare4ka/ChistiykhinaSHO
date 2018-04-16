@@ -1,0 +1,1116 @@
+*
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+
+$ff: 'Myriad Pro', sans-serif
+$ff-2: 'Roboto', sans-serif
+$c-title: #1d1e1f
+$c-text: #898888
+$c-white: #fefefe
+$c-whiteText: #b7b7b7
+$c-active: #d8ec54
+$bg: #1d1d1d
+
+.page
+	font-family: ($ff)
+	color: ($c-text)
+	width: 100%
+	letter-spacing: 1px
+	font-size: 13px
+
+.head
+	width: 100%
+	min-height: 100vh
+	background-color: #fff
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	z-index: 10
+	overflow: hidden
+	padding-bottom: 9vh
+	justify-content: center
+
+	&__main
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin: auto
+
+	&__title
+		font-size: 44px
+		text-transform: uppercase
+		position: relative
+		color: ($c-title)
+		text-align: center
+		font-weight: normal
+
+	&__sup
+		font-size: 32px
+		position: relative
+		top: -15px
+
+	&__text
+		font-size: 19px
+		line-height: 27px
+		text-align: center
+		width: 63%
+
+	&__btn
+		display: block
+		font-size: 13px
+		text-transform: uppercase
+		color: ($c-title)
+		padding: 20px
+		border: 1px solid ($c-title)
+		text-decoration: none
+		margin: 15px
+		background-color: #fff
+
+		&:hover
+			background-color: ($c-active)
+			border-color: ($c-active)
+
+.logo
+	width: 98px
+	position: absolute
+	top: 0
+	left: calc(50% - 49px)
+	z-index: 10
+
+	&__img
+		width: 100%
+
+.menu
+	padding: 20px 0
+	display: flex
+	width: 100%
+	align-self: flex-start
+
+	&__block
+		list-style: none
+		width: 50%
+		display: flex
+		font-size: 13px
+		font-family: ($ff-2)
+		align-items: flex-start
+
+		&_left
+			padding-right: 85px
+			justify-content: flex-end
+
+			.menu__item
+				padding-left: 45px
+				background-color: #fff
+
+		&_right
+			padding-left: 85px
+
+			.menu__item
+				padding-right: 45px
+				background-color: #fff
+
+
+	&__link
+		color: ($c-title)
+		text-decoration: none
+
+.menu-open
+	display: none
+	position: relative
+	width: 43px
+	height: 30px
+	cursor: pointer
+	z-index: 10
+	margin-top: -5px
+	margin-bottom: 5px
+
+	&__global
+		position: absolute
+		width: 100%
+		height: 5px
+		background-color: ($bg)
+		left: 0
+		transition: transform .2s
+
+		&_top
+			top: 0
+
+			&_open
+				transform: rotate(45deg)
+				transform-origin: 0 0
+		&_middle 
+			top: 50%
+
+			&_open 
+				transform: scaleX(0)
+
+		&_bottom 
+			top: 100%
+
+			&_open 
+				transform: rotate(-45deg)
+				transform-origin: 0 100%
+
+.navigation
+	width: 100%
+	align-self: flex-end
+
+	&__item
+		display: block
+		width: 10px
+		height: 10px
+		border-radius: 50%
+		background-color: #d0d0d0
+		margin: 6px auto
+
+		&_top
+			opacity: .33
+
+		&_middle
+			opacity: .66
+.left
+	@extend %imgBlock
+	left: 0
+	
+	&__img
+		left: 0
+		width: 23.3vw
+		@extend %img
+	
+	&__svg
+		@extend %svg
+		top: -50%
+		left: -50%
+
+	&__circle
+		@extend %circle
+
+.right
+	@extend %imgBlock
+	right: 0
+
+	&__img
+		width: 29.6vw
+		right: 0
+		@extend %img
+
+	&__text
+		font-size: 5.26vmax
+		line-height: 5.26vmax
+		text-transform: uppercase
+		color: ($c-active)
+		font-weight: bold
+		position: relative
+		top: -6vw
+		right: 17.5vw
+		text-align: right
+
+	&__svg
+		@extend %svg
+		top: 13.45%
+		right: -3.9%
+	&__circle
+		@extend %circle
+		stroke-dasharray: 150% 30%
+		stroke-dashoffset: 25%
+
+%imgBlock
+	position: absolute
+	z-index: -1
+	top: 0
+%img
+	position: relative
+	top: 0
+	z-index: 1
+%svg
+	position: absolute
+	width: 39vw
+	height: 39vw
+%circle
+	fill: none
+	stroke: ($c-active)
+
+.about
+	background-color: ($bg)
+	display: flex
+	background-image: url('../img/white.png'), url('../img/black.png')
+	background-repeat: no-repeat, no-repeat
+	background-position: 0 100%, 0 98%
+	background-size: 100% auto, 100% auto
+	position: relative
+
+	&::after
+		content: ""
+		display: block
+		z-index: 1
+		position: absolute
+		width: 100%
+		height: 5px
+		background-color: #fff
+		left: 0
+		bottom: -1px
+
+	&__wrap
+		width: calc(50% - 2.5px)
+		color: ($c-whiteText)
+		display: flex
+		flex-direction: column
+		padding-bottom: 250px
+
+		&_left
+			padding-right: 75px
+			text-align: right
+			padding-top: 140px
+			align-items: flex-end
+
+			.about__block_right
+				display: none
+
+		&_right
+			padding-left: 75px
+			padding-top: 270px
+
+	&__block
+		width: 55%
+		min-width: 400px
+		min-height: 350px
+		position: relative
+
+		&::before
+			content: ""
+			display: block
+			width: 14px
+			height: 14px
+			position: absolute
+			top: 10px
+			background-color: ($bg)
+			border: 5px solid #fff
+			border-radius: 50%
+
+		&_left
+			&::before
+				right: -89px
+
+			&_big::before
+				width: 36px
+				height: 36px
+				right: -100px
+
+		&_right
+			&::before
+				left: -89px
+
+	&__title
+		font-size: 48px
+		color: ($c-white)
+
+	&__year
+		color: ($c-active)
+		font-size: 30px
+
+	&__text
+		font-size: 15px
+		line-height: 22px
+		padding: 15px 0
+
+	&__line
+		width: 5px
+		background-color: #fff
+		align-self: stretch
+
+.title
+	text-align: center
+	margin: auto
+	&__head
+		font-size: 24px
+		color: ($c-title)
+		&_white
+			color: ($c-white)
+	&__text
+		font-size: 16px
+		line-height: 26px
+
+.company
+	width: 100%
+	background-color: #fff
+	padding: 100px 0 150px
+
+	&__wrap
+		width: 63%
+		min-width: 980px
+		margin: auto
+		padding-top: 120px
+		display: flex
+
+	&__img-block
+		margin: auto
+		width: 168px
+		border-radius: 50%
+		overflow: hidden
+
+	&__img
+		width: 100%
+
+	&__position
+		text-align: center
+		font-size: 24px
+		color: #464646
+		padding-top: 20px
+
+	&__text
+		text-align: center
+		font-size: 13px
+		line-height: 26px
+		color: #b3b3b3
+
+	&__sosial
+		text-align: center
+
+	&__link
+		font-size: 0
+		display: inline-block
+		text-decoration: none
+		padding: 10px
+
+	&__icon
+		fill: #e4e4e4
+		fill-rule: evenodd
+
+	&__block
+		width: 33.333%
+
+		&_bottom
+			padding-top: 90px
+
+		&:hover
+			.company__icon
+				fill: ($c-active)
+
+.services-blod-wrap
+	width: 100%
+	position: relative
+	z-index: 1
+
+	&::before
+		content: ""
+		position: absolute
+		display: block
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: ($bg)
+		transform: skewY(-6deg)
+		z-index: -1
+
+.services
+	padding: 130px 0 100px
+	width: 100%
+	position: relative
+	z-index: 2
+
+	&__wrap
+		display: flex
+		padding-top: 200px
+		width: 63%
+		min-width: 980px
+		margin: auto
+
+	&__block
+		width: 33.333%
+		padding: 0 30px
+		text-align: center
+
+	&__img-block
+		width: 172px
+		height: 172px
+		border-radius: 50%
+		margin: auto
+		border: 6px solid #fff
+		display: flex
+		align-items: center
+		justify-content: center
+
+	&__icon
+		fill: ($c-active)
+		fill-rule: evenodd
+
+	&__title
+		font-size: 25px
+		color: ($c-white)
+		padding: 35px 0
+
+	&__text
+		font-size: 19px
+		color: ($c-whiteText)
+.blog
+	display: flex
+	width: 100%
+	align-items: center
+	flex-direction: column
+	padding: 320px 0 190px
+	position: relative
+	z-index: 1
+	
+	&__gradient
+		background-image: linear-gradient(to bottom, ($bg), transparent)
+		z-index: -1
+		position: absolute
+		top: -300px
+		left: 0
+		right: 0
+		bottom: 0
+
+	&__btn
+		display: block
+		color: ($c-title)
+		background-color: #fff
+		font-size: 16px
+		padding: 25px 40px
+		text-decoration: none
+
+		&:hover
+			background-color: ($c-active)
+	&__bg
+		color: #3b3b3b
+		opacity: 0.45
+		z-index: -1
+		width: 50%
+		position: absolute
+		top: -120px
+		left: calc(50% - 25%)
+		transform: perspective(10vmax) rotateX(4deg)
+	&__block
+		padding-bottom: 100px
+
+	&__wrap
+		display: flex
+		justify-content: space-between
+
+	&__title
+		font-size: 30px
+	
+	&__svg
+		margin: 0 5px
+		display: inline-block
+
+	&__sosial
+		font-size: 18px
+
+	&__text
+		font-size: 18px
+		color: #868686
+		padding: 30px 0
+	
+	&__tags
+		display: inline-block
+		padding-right: 20px
+		font-size: 18px
+
+	&__tag
+		display: inline-block
+
+	&__icon
+		fill: #3b3b3b
+		fill-rule: evenodd
+
+	&__more
+		font-size: 16px
+		font-weight: bold
+		text-transform: uppercase
+
+	&:hover
+		.blog__bg
+			animation: blog 45s linear forwards
+
+@keyframes blog
+	100% 
+		transform: perspective(10vmax) rotateX(4deg) translateY(-500px)
+
+
+.contacts
+	width: 100%
+	position: relative
+	z-index: 2
+	padding: 200px 0 100px
+
+	&::before
+		content: ""
+		position: absolute
+		display: block
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #fff
+		transform: skewY(-6deg)
+		z-index: -1
+
+	&__wrap
+		display: flex
+		padding: 60px 0 100px
+		width: 63%
+		min-width: 980px
+		margin: auto
+
+	&__block
+		width: 33.333%
+		padding: 0 30px
+		text-align: center
+
+	&__text
+		font-size: 12px
+		padding: 10px
+
+	&__icon
+		fill: #323232
+		fill-rule: evenodd
+	
+	&__form
+		width: 63%
+		min-width: 980px
+		margin: auto
+
+	&__input
+		display: block
+		width: 100%
+		text-align: center
+		padding: 20px
+		margin: 20px 0
+		font-size: 15px
+		border: 1px solid #161616
+		outline: none !important
+		color: ($c-text)
+		letter-spacing: 1px
+
+		&_btn
+			background-color: #161616
+			font-size: 17px
+			color: #fefefe
+
+			&:hover
+				background-color: ($c-active)
+				color: ($c-text)
+
+		&:hover
+			border-color: ($c-active)
+
+		&:focus
+			border-color: ($c-active)
+
+.footer
+	position: relative
+	z-index: 4
+	text-align: center
+	width: 100%
+
+	&__text
+		width: 33%
+		min-width: 500px
+		margin: auto
+		font-size: 14px
+		line-height: 26px
+		padding: 20px 0
+
+@media screen and (min-width: 1900px)
+
+	.head
+
+		&__title
+			font-size: 2.3vmax
+
+		&__sup
+			font-size: 1.8vmax
+			top: -0.8vmax
+
+		&__text
+			font-size: 1vmax
+			line-height: 1.5vmax
+
+		&__btn
+			font-size: .7vmax
+			padding: 1vmax
+			border: 3px solid ($c-title)
+			margin: .8vmax
+
+	.logo
+		width: 5vmax
+		left: calc(50% - 2.5vmax)
+
+	.menu
+		padding: 1vmax 0
+
+		&__block
+			font-size: .7vmax
+
+			&_left
+				padding-right: 4vmax
+
+				.menu__item
+					padding-left: 2.3vmax
+
+			&_right
+				padding-left: 4vmax
+
+				.menu__item
+					padding-right: 2.3vmax
+
+	.navigation
+
+		&__item
+			width: .5vmax
+			height: .5vmax
+			margin: .4vmax auto
+	.left
+
+		&__circle
+			stroke-width: 3px
+
+	.right
+		&__circle
+			stroke-width: 3px
+
+	.about
+	
+		&__wrap
+			padding-bottom: 300px
+
+			&_left
+				padding-right: 4vw
+				padding-top: 140px
+
+			&_right
+				padding-left: 4vw
+				padding-top: 400px
+
+		&__block
+			padding-bottom: 200px
+
+			&::before
+				width: .8vw
+				height: .8vw
+				top: 20px
+				border: 0.25vw solid #fff
+
+			&_left
+				&::before
+					right: -4.8vw
+
+				&_big::before
+					width: 1.6vw
+					height: 1.6vw
+					right: -5.15vw
+
+			&_right
+				&::before
+					left: -4.8vw
+
+		&__title
+			font-size: 2.5vmax
+
+		&__year
+			font-size: 1.5vmax
+
+		&__text
+			font-size: .8vmax
+			line-height: 1.2vmax
+			padding: .8vmax 0
+
+		&__line
+			width: .25vw
+
+	.title
+		&__head
+			font-size: 1.3vmax
+		&__text
+			font-size: .8vmax
+			line-height: 1.4vmax
+
+	.company
+		padding: 150px 0 200px
+
+		&__wrap
+			padding-top: 160px
+
+		&__img-block
+			width: 300px
+			height: 300px
+	
+		&__position
+			font-size: 1.3vmax
+			padding-top: 1vmax
+
+		&__text
+			font-size: .7vmax
+			line-height: 1.4vmax
+
+		&__link
+			padding: .5vmax
+
+		&__svg
+			width: 1vmax
+			height: .8vmax
+
+		&__block
+
+			&_bottom
+				padding-top: 130px
+
+
+	.services
+		padding: 180px 0 150px
+
+		&__wrap
+			padding-top: 300px
+
+		&__block
+			padding: 0 1.5vmax
+
+		&__img-block
+			width: 300px
+			height: 300px
+			border: 10px solid #fff
+
+		&__title
+			font-size: 1.4vmax
+			padding: 1.8vmax 0
+	
+		&__text
+			font-size: 1vmax
+
+		&__svg
+			width: 33.3vw
+			height: 2.86vw
+	.blog
+		padding-bottom: 400px
+		&__btn
+			font-size: 0.8vmax
+			padding: 1.3vmax 2vmax
+		&__bg
+			top: -120px
+		&__block
+			padding-bottom: 100px
+
+		&__title
+			font-size: 1.5vmax
+	
+		&__svg
+			margin: 0 .25vmax
+
+		&__sosial
+			font-size: 1vmax
+
+		&__text
+			font-size: 1vmax
+			padding: 1.5vmax 0
+	
+		&__tags
+			padding-right: 1vmax
+			font-size: 1vmax
+
+		&__more
+			font-size: .8vmax
+		&__svg
+			width: 1vmax
+			height: 1vmax
+
+
+	.contacts
+		padding: 300px 0 150px
+
+		&__wrap
+			padding: 100px 0
+
+		&__block
+			padding: 0 1.5vmax
+
+		&__text
+			font-size: .7vmax
+			padding: .5vmax
+
+		&__input
+			padding: 1vmax
+			margin: 1vmax 0
+			font-size: .8vmax
+			border: 3px solid #161616
+
+			&_btn
+				font-size: .9vmax
+		&__svg
+			width: 1vmax
+			height: 1.1vmax
+
+	.footer
+
+		&__text
+			font-size: .7vmax
+			line-height: 1.4vmax
+			padding: 1vmax 0
+
+@media screen and (max-width: 1000px)
+
+	.menu
+		flex-direction: column
+		margin-left: 25vw
+
+		&__block
+			display: none
+			padding: 0 !important
+
+		&__item
+			padding: 10px 0 !important
+			font-size: 18px
+
+	.menu-open
+		display: block
+
+	.about
+
+		&__wrap
+			padding-bottom: 150px
+
+			&_left
+				padding-right: 30px
+				padding-top: 80px
+
+			&_right
+				padding-left: 30px
+				padding-top: 150px
+
+		&__block
+			width: 80%
+			min-width: auto
+			min-height: 250px
+
+			&_left
+				&::before
+					right: -44px
+	
+				&_big::before
+					width: 36px
+					height: 36px
+					right: -55px
+
+			&_right
+				&::before
+					left: -44px
+
+		&__title
+			font-size: 35px
+
+		&__year
+			font-size: 24px
+
+		&__text
+			font-size: 13px
+			line-height: 18px
+			padding: 10px 0
+
+	.company
+		padding: 50px 0 80px
+
+		&__wrap
+			width: 90%
+			min-width: 90%
+			padding-top: 80px
+
+		&__img-block
+			width: 100px
+
+		&__position
+			font-size: 20px
+
+		&__text
+			line-height: 20px
+
+		&__block
+	
+			&_bottom
+				padding-top: 60px
+
+	.services
+		padding: 70px 0 50px
+
+		&__wrap
+			padding-top: 100px
+			width: 90%
+			min-width: 90%
+
+		&__block
+			padding: 0 15px
+
+		&__img-block
+			width: 100px
+			height: 100px
+
+		&__title
+			font-size: 20px
+			padding: 20px 0
+
+		&__text
+			font-size: 15px
+
+		&__svg
+			width: 40px
+			height: 35px
+	.blog
+		padding: 150px 0 100px
+	
+		&__gradient
+			top: -150px
+
+		&__bg
+			width: 70%
+			top: -80px
+			left: calc(50% - 35%)
+		
+		&__block
+			padding-bottom: 50px
+
+		&__title
+			font-size: 20px
+	
+		&__svg
+			width: 10px
+			height: 10px
+
+		&__sosial
+			font-size: 12px
+
+		&__text
+			font-size: 12px
+			padding: 10px 0
+	
+		&__tags
+			padding-right: 10px
+			font-size: 12px
+
+		&__more
+			font-size: 10px
+
+		&:hover
+			.blog__bg
+				animation: blog 30s linear forwards
+
+	@keyframes blog
+		100% 
+			transform: perspective(10vmax) rotateX(4deg) translateY(-200px)
+
+
+	.contacts
+		padding: 100px 0 50px
+
+		&__wrap
+			padding: 30px 0 50px
+			width: 90%
+			min-width: 90%
+
+		&__block
+			padding: 0 10px
+	
+		&__form
+			width: 90%
+			min-width: 90%
+
+	.footer__text
+		width: 90px
+		min-width: 90%
+
+@media screen and (max-width: 750px)
+
+	.blog__block:last-child
+		display: none
+
+@media screen and (max-width: 570px)
+	.right
+		display: none
+	.company
+
+		&__wrap
+			flex-direction: column
+			align-items: center
+
+		&__block
+			width: 90%
+			padding-top: 15px !important
+			margin: auto
+	.about
+		background-position: 0 100%, 0 99.8%
+
+		&__wrap
+			align-items: center
+			width: 100%
+
+			&_left
+				padding-right: 0
+				.about__block_right
+					display: block
+
+			&_right
+				display: none
+
+		&__block
+			width: 90%
+			min-width: 90%
+
+			&_left
+				padding-right: 75px
+				&::before
+					right: 15px
+
+				&_big
+					padding-right: 75px
+					&::before
+						right: 0px
+	
+			&_right
+				text-align: left
+				padding-left: 75px
+
+				&::before
+					left: 15px
+
+		&__line
+			display: none
+
+	.services
+		&__wrap
+			flex-direction: column
+			justify-content: center
+
+		&__block
+			width: 90%
+			padding-bottom: 15px
+			margin: auto
+
+	.blog
+		padding: 100px 0 100px
+	
+		&__gradient
+			top: -150px
+
+		&__bg
+			transform: perspective(10vmax) rotateX(4deg) scale(.8)
+
+	.contacts
+
+		&__wrap
+			flex-direction: column
+			justify-content: center
+
+		&__block
+			width: 90%
+			padding-bottom: 15px
+			margin: auto
+
+@media screen and (max-width: 400px)
+
+	.blog__bg
+		transform: perspective(10vmax) rotateX(4deg) scale(.6)
+
+@media screen and (min-width: 1001px)
+
+	.menu
+		&__block
+			display: flex !important
